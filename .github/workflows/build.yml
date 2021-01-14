@@ -11,7 +11,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        runner: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
+        runner: [0,1,2,3,4]
     steps:
       - run: |
           apt update -qq
@@ -23,6 +23,8 @@ jobs:
           if [ ${{ matrix.runner }} -eq 0 ]
           then
             sleep 30s
+            git config user.name 'Davey G'
+            git config user.email 'daveyg1@yandex.com'
             git commit --allow-empty --allow-empty-message --no-edit
             git push
           fi
